@@ -8,6 +8,7 @@ public class Main {
 
         while (true){
             int input = 0;
+            printMenu("Jogar", "Regras","Sair");
 
             try {
                 input = scanner.nextInt();
@@ -18,8 +19,8 @@ public class Main {
 
             if(input == 1){
                 System.out.println("Jogar");
-                Avalon avalon = new Avalon();
-                avalon.Comecar();
+                Avalon avalon = new Avalon(Avalon.Comecar());
+                avalon.teste();
             }
 
             else if (input == 2){
@@ -38,6 +39,15 @@ public class Main {
             scanner.nextLine();
         }
 
+    }
+
+    public static void printMenu(String... args) {
+        int i = 1;
+        for (String s : args) {
+            System.out.println("[" + i + "] " + s);
+            i++;
+        }
+        System.out.print("Opção: ");
     }
 
 }
