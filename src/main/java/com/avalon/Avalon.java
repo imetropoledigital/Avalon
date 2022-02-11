@@ -1,40 +1,26 @@
 package com.avalon;
 
-public class Avalon{
+import java.util.ArrayList;
+import java.util.Scanner;
 
-    private int Wait,Playing,Exit;
-    private int Rounds;
-    private int ScoreBoard;
+public class Avalon {
 
-    /*public Avalon(int Wait, int Playing,int Exit, int Rounds, int ScoreBoard){
-        this.Wait = Wait;
-        this.Playing = Playing;
-        this.Exit = Exit;
-        this.Rounds = Rounds;
-        this.ScoreBoard = ScoreBoard;
-        this.time = time;
-    }*/
+    public static int Jogadores;
+    public static int JogadoresBens;
+    public static int JogadoresMaus;
+    private boolean Resultado;
+    private int Lider;
+    public static ArrayList<Boolean> Votacoes = new ArrayList<Boolean>();
 
-    public void setRounds(int a){
-        Rounds = a;
+    public void Comecar(){
+        System.out.println("Quantos jogadores vão participar do jogo?");
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        Jogadores = input;
+
+
+
     }
 
-    public void setScoreBoard(int b){
-        ScoreBoard = b;
-    }
-
-    public int getRounds(){
-        return Rounds;
-    }
-
-    public int getScoreBoard(){
-        return ScoreBoard;
-    }
-
-
-
-
-
-
-
+}
 

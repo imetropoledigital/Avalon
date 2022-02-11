@@ -1,11 +1,4 @@
 package com.avalon;
-
-<<<<<<< HEAD
-public class Main {
-
-    public static void main(String[] args) {
-
-=======
 import java.util.Scanner;
 
 public class Main {
@@ -25,7 +18,8 @@ public class Main {
 
             if(input == 1){
                 System.out.println("Jogar");
-
+                Avalon avalon = new Avalon();
+                avalon.Comecar();
             }
 
             else if (input == 2){
@@ -43,7 +37,7 @@ public class Main {
 
             scanner.nextLine();
         }
->>>>>>> 5094072dbdd6fbc2736bef3b294f3de0778d2257
+
     }
 
 }
