@@ -9,6 +9,7 @@ public class Avalon {
     public static int JogadoresBens;
     public static int JogadoresMaus;
     private boolean Resultado;
+
     private int Lider;
     public static ArrayList<Boolean> Votacoes = new ArrayList<Boolean>();
 
