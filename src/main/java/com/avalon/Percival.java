@@ -19,9 +19,6 @@ public class Percival implements Personagens {
         System.out.println("Um deles é o Merlin, o outro é a Morgana.");
     }
 
-    @Override
-    public void escolherInfluencia() {
 
-    }
 
 }

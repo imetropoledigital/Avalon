@@ -52,6 +52,10 @@ public class Jogador {
         Classe.conhecimento(Participantes);
     }
 
+    public boolean Votar(){
+        return Classe.escolherInfluencia();
+    }
+
 
     //public void setname(String b){ name = b;}
 

@@ -11,9 +11,6 @@ public class Servo implements Personagens {
         System.out.println("Infelizmente você não sabe nada.");
     }
 
-    @Override
-    public void escolherInfluencia() {
 
-    }
 
 }

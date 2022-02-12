@@ -4,18 +4,22 @@ import java.util.*;
 
 public class Avalon {
 
-    public static int Jogadores;
-    public static int JogadoresBens;
-    public static int JogadoresMaus;
+    private static int Jogadores;
+    private static int JogadoresBens;
+    private static int JogadoresMaus;
+    private static int VitoriasBem = 0;
+    private static int VitoriasMal = 0;
+    private int indiceLider = 0;
+    private Jogador Lider;
     private boolean Resultado;
-    private int Lider;
-    public static ArrayList<Boolean> Votacoes = new ArrayList<>();
+    private int indiceMissao = 0;
     public static ArrayList<Integer> Tamanhotime = new ArrayList<>();
     public static ArrayList<Jogador> Participantes = new ArrayList<>();
+    public static ArrayList<Jogador> Escolhidos = new ArrayList<>();
 
     public static int Configurar(){
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner2 = new Scanner(System.in);
 
         while (true){
 
@@ -23,7 +27,7 @@ public class Avalon {
             System.out.println("Quantos jogadores vão participar do jogo?");
 
             try {
-                input = scanner.nextInt();
+                input = scanner2.nextInt();
             }
             catch (Exception e){
 
@@ -37,15 +41,84 @@ public class Avalon {
                 System.out.println("Valor invalido");
             }
 
-            scanner.nextLine();
+            scanner2.nextLine();
 
         }
     }
 
     public void Preparacao(){
         for(int i = 0; i < Participantes.size(); i++){
-            Jogador I = Participantes.get(i);
-            I.Exodia(Participantes);
+            Participantes.get(i).Exodia(Participantes);
+        }
+    }
+
+    public void Jogar(){
+        while (true){
+            Resultado = true;
+            Lider = Participantes.get(indiceLider);
+            escolhaTime();
+            for(int i = 0; i < Escolhidos.size(); i++){
+                if(Escolhidos.get(i).Votar() == false){
+                    Resultado = false;
+                }
+            }
+
+            Escolhidos.clear();
+
+            if(Resultado == true){
+                VitoriasBem++;
+                System.out.println("O bem venceu essa rodada!");
+            }
+            else{
+                VitoriasMal++;
+                System.out.println("O mal venceu essa rodada!");
+            }
+
+            if(VitoriasBem == 3){
+                System.out.println("O conseguiu 3 sucessos, mas ainda não acabou...");
+                break;
+            }
+
+            if(VitoriasMal == 3){
+                System.out.println("O mal ganhou!");
+                break;
+            }
+
+            indiceLider++;
+            indiceMissao++;
+        }
+    }
+
+    public void escolhaTime(){
+        Scanner scanner3 = new Scanner(System.in);
+        int verificar = 0;
+        while (true){
+            int input = -1;
+            System.out.println("Digite o indice dos jogadores que irão participar da missão:");
+
+            try {
+                input = scanner3.nextInt();
+            }
+            catch (Exception e){
+
+            }
+
+            if (input >= 0 && input < Participantes.size()){
+                Escolhidos.add(Participantes.get(input));
+                verificar++;
+                System.out.println("Passou!");
+            }
+
+            else {
+                System.out.println("Valor invalido");
+            }
+
+
+            if(verificar == Tamanhotime.get(indiceMissao)){
+                break;
+            }
+
+            scanner3.nextLine();
         }
     }
 

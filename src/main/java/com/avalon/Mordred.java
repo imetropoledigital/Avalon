@@ -12,8 +12,8 @@ public class Mordred implements Personagens {
     }
 
     @Override
-    public void escolherInfluencia() {
-
+    public boolean escolherInfluencia() {
+        return false;
     }
 
 }

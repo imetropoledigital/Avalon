@@ -14,9 +14,4 @@ public class Merlin implements Personagens {
     }
 
 
-    @Override
-    public void escolherInfluencia() {
-
-    }
-
 }

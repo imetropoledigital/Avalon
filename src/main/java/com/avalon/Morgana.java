@@ -14,8 +14,8 @@ public class Morgana implements Personagens {
     }
 
     @Override
-    public void escolherInfluencia() {
-
+    public boolean escolherInfluencia() {
+        return false;
     }
 
 }
