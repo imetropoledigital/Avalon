@@ -1,4 +1,4 @@
-package com.avalon.PERSONAGENS;
+package com.avalon;
 
 public interface Personagens {
 

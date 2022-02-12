@@ -19,7 +19,7 @@ public class Main {
 
             if(input == 1){
                 System.out.println("Jogar");
-                Avalon avalon = new Avalon(Avalon.Comecar());
+                Avalon avalon = new Avalon(Avalon.Configurar());
                 avalon.teste();
             }
 

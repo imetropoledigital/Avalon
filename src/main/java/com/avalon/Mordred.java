@@ -1,4 +1,6 @@
-package com.avalon.PERSONAGENS;
+package com.avalon;
+
+import com.avalon.Personagens;
 
 public class Mordred implements Personagens {
 

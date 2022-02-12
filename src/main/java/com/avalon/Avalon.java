@@ -10,12 +10,11 @@ public class Avalon {
     public static int JogadoresBens;
     public static int JogadoresMaus;
     private boolean Resultado;
-
     private int Lider;
     public static ArrayList<Boolean> Votacoes = new ArrayList<>();
     public static ArrayList<Integer> Tamanhotime = new ArrayList<>();
 
-    public static int Comecar(){
+    public static int Configurar(){
 
         Scanner scanner = new Scanner(System.in);
 
@@ -42,6 +41,10 @@ public class Avalon {
             scanner.nextLine();
 
         }
+    }
+
+    public void Jogar(){
+
     }
 
     public Avalon(int Jogadores){
