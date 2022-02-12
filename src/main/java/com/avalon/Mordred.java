@@ -1,24 +1,14 @@
-package com.avalon.PERSONAGENS;
+package com.avalon;
 
 public class Mordred implements Personagens {
 
     @Override
     public void conhecimento() {
-
-    }
-
-    @Override
-    public void escolherEquipe() {
-
+        System.out.println("Teste1");
     }
 
     @Override
     public void escolherInfluencia() {
-
-    }
-
-    @Override
-    public void votarEquipe() {
 
     }
 
