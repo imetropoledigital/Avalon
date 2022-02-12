@@ -1,13 +1,14 @@
 package com.avalon;
 
+
 import com.avalon.Personagens;
 
 
-public class Mordred implements Personagens {
+public class Percival implements Personagens {
 
     @Override
     public void conhecimento() {
-        System.out.println("Teste1");
+        System.out.println("Teste4");
     }
 
     @Override

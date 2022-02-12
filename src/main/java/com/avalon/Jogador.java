@@ -1,8 +1,4 @@
 package com.avalon;
-
-
-public class Jogador extends Personagem {
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,14 +11,14 @@ public class Jogador {
     public Jogador(int id,int Classe){
         this.id = id;
 
-        /*if(Classe == 1){
+        if(Classe == 1){
             this.Classe = new Merlin();
         }
         else if(Classe == 2){
             this.Classe = new Percival();
         }
         else if(Classe == 3){
-            this.Classe = new Assasino();
+            this.Classe = new Assassino();
         }
         else if(Classe == 4){
             this.Classe = new Morgana();
@@ -35,10 +31,9 @@ public class Jogador {
         }
         else{
             this.Classe = new Servo();
-        }*/
+        }
 
     }
-
 
     public int getId(){ return id;}
 
@@ -49,7 +44,6 @@ public class Jogador {
     //public void setname(String b){ name = b;}
 
     //public String getname(){ return name;}
-
 
 
 }
