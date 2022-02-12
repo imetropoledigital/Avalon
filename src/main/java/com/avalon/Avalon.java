@@ -1,8 +1,6 @@
 package com.avalon;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Avalon {
 
@@ -13,6 +11,7 @@ public class Avalon {
     private int Lider;
     public static ArrayList<Boolean> Votacoes = new ArrayList<>();
     public static ArrayList<Integer> Tamanhotime = new ArrayList<>();
+    public static ArrayList<Jogador> Participantes = new ArrayList<>();
 
     public static int Configurar(){
 
@@ -49,6 +48,16 @@ public class Avalon {
 
     public Avalon(int Jogadores){
         this.Jogadores = Jogadores;
+        Integer[] role = new Integer[Jogadores];
+
+        for (int i = 0; i < role.length; i++){
+            role[i] = i;
+        }
+        Collections.shuffle(Arrays.asList(role));
+        for(int j = 0; j < role.length; j++){
+            Participantes.add(new Jogador(j, role[j]));
+        }
+
         switch (Jogadores){
 
             case 5:
