@@ -69,31 +69,31 @@ public class Avalon {
             case 6:
                 JogadoresBens = 4;
                 JogadoresMaus = 2;
-                Tamanhotime.addAll(List.of(2,3,2,3,3));
+                Tamanhotime.addAll(List.of(2,3,4,3,4));
                 break;
 
             case 7:
                 JogadoresBens = 4;
                 JogadoresMaus = 3;
-                Tamanhotime.addAll(List.of(2,3,2,3,3));
+                Tamanhotime.addAll(List.of(2,3,4,3,4));
                 break;
 
             case 8:
                 JogadoresBens = 5;
                 JogadoresMaus = 3;
-                Tamanhotime.addAll(List.of(2,3,2,3,3));
+                Tamanhotime.addAll(List.of(3,4,4,5,5));
                 break;
 
             case 9:
                 JogadoresBens = 6;
                 JogadoresMaus = 3;
-                Tamanhotime.addAll(List.of(2,3,2,3,3));
+                Tamanhotime.addAll(List.of(3,4,4,5,5));
                 break;
 
             case 10:
                 JogadoresBens = 6;
                 JogadoresMaus = 4;
-                Tamanhotime.addAll(List.of(2,3,2,3,3));
+                Tamanhotime.addAll(List.of(3,4,4,5,5));
                 break;
 
         }
