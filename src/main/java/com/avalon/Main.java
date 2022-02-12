@@ -21,6 +21,7 @@ public class Main {
                 System.out.println("Jogar");
                 Avalon avalon = new Avalon(Avalon.Configurar());
                 avalon.teste();
+                avalon.Preparacao();
             }
 
             else if (input == 2){

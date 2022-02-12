@@ -42,8 +42,11 @@ public class Avalon {
         }
     }
 
-    public void Jogar(){
-
+    public void Preparacao(){
+        for(int i = 0; i < Participantes.size(); i++){
+            Jogador I = Participantes.get(i);
+            I.Exodia(Participantes);
+        }
     }
 
     public Avalon(int Jogadores){
@@ -69,26 +72,31 @@ public class Avalon {
             case 6:
                 JogadoresBens = 4;
                 JogadoresMaus = 2;
+                Tamanhotime.addAll(List.of(2,3,2,3,3));
                 break;
 
             case 7:
                 JogadoresBens = 4;
                 JogadoresMaus = 3;
+                Tamanhotime.addAll(List.of(2,3,2,3,3));
                 break;
 
             case 8:
                 JogadoresBens = 5;
                 JogadoresMaus = 3;
+                Tamanhotime.addAll(List.of(2,3,2,3,3));
                 break;
 
             case 9:
                 JogadoresBens = 6;
                 JogadoresMaus = 3;
+                Tamanhotime.addAll(List.of(2,3,2,3,3));
                 break;
 
             case 10:
                 JogadoresBens = 6;
                 JogadoresMaus = 4;
+                Tamanhotime.addAll(List.of(2,3,2,3,3));
                 break;
 
         }
