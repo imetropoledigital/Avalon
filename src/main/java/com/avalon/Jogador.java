@@ -1,10 +1,10 @@
 package com.avalon;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class Jogador extends Personagem {
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Jogador {
 
