@@ -42,8 +42,11 @@ public class Avalon {
         }
     }
 
-    public void Jogar(){
-
+    public void Preparacao(){
+        for(int i = 0; i < Participantes.size(); i++){
+            Jogador I = Participantes.get(i);
+            I.Exodia(Participantes);
+        }
     }
 
     public Avalon(int Jogadores){
