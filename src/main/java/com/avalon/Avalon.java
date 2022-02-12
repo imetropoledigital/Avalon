@@ -5,10 +5,8 @@ import java.util.*;
 public class Avalon {
 
     private static int Jogadores;
-    private static int JogadoresBens;
-    private static int JogadoresMaus;
-    private static int VitoriasBem = 0;
-    private static int VitoriasMal = 0;
+    private int VitoriasBem = 0;
+    private int VitoriasMal = 0;
     private int indiceLider = 0;
     private Jogador Lider;
     private boolean Resultado;
@@ -137,48 +135,30 @@ public class Avalon {
         switch (Jogadores){
 
             case 5:
-                JogadoresBens = 3;
-                JogadoresMaus = 2;
                 Tamanhotime.addAll(List.of(2,3,2,3,3));
                 break;
 
             case 6:
-                JogadoresBens = 4;
-                JogadoresMaus = 2;
                 Tamanhotime.addAll(List.of(2,3,4,3,4));
                 break;
 
             case 7:
-                JogadoresBens = 4;
-                JogadoresMaus = 3;
                 Tamanhotime.addAll(List.of(2,3,4,3,4));
                 break;
 
             case 8:
-                JogadoresBens = 5;
-                JogadoresMaus = 3;
                 Tamanhotime.addAll(List.of(3,4,4,5,5));
                 break;
 
             case 9:
-                JogadoresBens = 6;
-                JogadoresMaus = 3;
                 Tamanhotime.addAll(List.of(3,4,4,5,5));
                 break;
 
             case 10:
-                JogadoresBens = 6;
-                JogadoresMaus = 4;
                 Tamanhotime.addAll(List.of(3,4,4,5,5));
                 break;
 
         }
-    }
-
-    public void teste(){
-        System.out.println(Jogadores);
-        System.out.println(JogadoresBens);
-        System.out.println(JogadoresMaus);
     }
 
 }
