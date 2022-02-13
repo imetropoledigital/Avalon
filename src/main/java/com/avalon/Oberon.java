@@ -11,7 +11,8 @@ public class Oberon implements Personagens {
 
     @Override
     public void conhecimento(ArrayList<Jogador> Participantes) {
-        System.out.println("Você não conhece quem é do seu time.");
+        System.out.println("Você é o Oberon");
+        System.out.println("e você não conhece quem é do seu time.");
     }
 
     @Override

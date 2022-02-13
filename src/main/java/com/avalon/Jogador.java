@@ -10,6 +10,7 @@ public class Jogador {
     private int id;
     private Personagens Classe;
     private Classes Carta;
+    private ArrayList<String> listajogadores;
 
     public Jogador(int id,int Classe){
         this.id = id;
@@ -49,7 +50,7 @@ public class Jogador {
 
     public Classes getClasse(){ return Carta;}
 
-    public void Exodia(ArrayList<Jogador> Participantes){
+    public void getConhecimento(ArrayList<Jogador> Participantes){
         Classe.conhecimento(Participantes);
     }
 
@@ -81,6 +82,9 @@ public class Jogador {
         }
     }
 
+    public boolean testnome(String input){
+        return Avalon.Participantes.stream().map(x -> x.getnome().compareTo(input) == 0).noneMatch(x -> !x);
+    }
 
     public void escolherNome(){
         Scanner scanner6 = new Scanner(System.in);
@@ -94,8 +98,7 @@ public class Jogador {
             catch (Exception e){
 
             }
-
-            if (input.length() < 10 && input.length() > 2 && !input.equals("Padrão")){
+            if (input.length() < 10 && input.length() > 3 && !input.equals("Padrão")){
                nome = input;
                System.out.println("Nome aprovado.");
                return;

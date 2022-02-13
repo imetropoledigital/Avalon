@@ -13,6 +13,54 @@ public class Avalon {
     public static ArrayList<Jogador> Participantes = new ArrayList<>();
     public static ArrayList<Jogador> Escolhidos = new ArrayList<>();
 
+    public Avalon(int Jogadores){
+        Avalon.Jogadores = Jogadores;
+        Integer[] role = new Integer[Jogadores];
+
+        for (int i = 0; i < role.length; i++){
+            role[i] = i;
+        }
+        Collections.shuffle(Arrays.asList(role));
+        for(int j = 0; j < role.length; j++){
+            Participantes.add(new Jogador(j, role[j]));
+            Participantes.get(j).escolherNome();
+        }
+
+        switch (Jogadores){
+
+            case 5:
+                Tamanhotime.addAll(List.of(2,3,2,3,3));
+                metade = 3;
+                break;
+
+            case 6:
+                Tamanhotime.addAll(List.of(2,3,4,3,4));
+                metade = 4;
+                break;
+
+            case 7:
+                Tamanhotime.addAll(List.of(2,3,4,3,4));
+                metade = 4;
+                break;
+
+            case 8:
+                Tamanhotime.addAll(List.of(3,4,4,5,5));
+                metade = 5;
+                break;
+
+            case 9:
+                Tamanhotime.addAll(List.of(3,4,4,5,5));
+                metade = 5;
+                break;
+
+            case 10:
+                Tamanhotime.addAll(List.of(3,4,4,5,5));
+                metade = 6;
+                break;
+
+        }
+    }
+
     public static int Configurar(){
 
         Scanner scanner2 = new Scanner(System.in);
@@ -44,8 +92,10 @@ public class Avalon {
 
     public void Preparacao(){
         for(int i = 0; i < Participantes.size(); i++){
-            Participantes.get(i).Exodia(Participantes);
+            System.out.println("Jogador " + i + " : ");
+            Participantes.get(i).getConhecimento(Participantes);
         }
+
     }
 
     public void Jogar(){
@@ -54,7 +104,7 @@ public class Avalon {
         Jogador Lider;
         while (true){
             Resultado = true;
-            Lider = Participantes.get(indiceLider);
+            //Lider = Participantes.get(indiceLider);
             escolhaTime();
             if(aprovarVotacao()){
                 for(int i = 0; i < Escolhidos.size(); i++){
@@ -107,10 +157,9 @@ public class Avalon {
 
             }
 
-            if (input >= 0 && input < Participantes.size()){
+            if (input >= 0 && input < Participantes.size() && !Escolhidos.contains(Participantes.get(input))){
                 Escolhidos.add(Participantes.get(input));
                 verificar++;
-                System.out.println("Passou!");
             }
 
             else {
@@ -140,53 +189,6 @@ public class Avalon {
         return false;
     }
 
-    public Avalon(int Jogadores){
-        Avalon.Jogadores = Jogadores;
-        Integer[] role = new Integer[Jogadores];
-
-        for (int i = 0; i < role.length; i++){
-            role[i] = i;
-        }
-        Collections.shuffle(Arrays.asList(role));
-        for(int j = 0; j < role.length; j++){
-            Participantes.add(new Jogador(j, role[j]));
-            Participantes.get(j).escolherNome();
-        }
-
-        switch (Jogadores){
-
-            case 5:
-                Tamanhotime.addAll(List.of(2,3,2,3,3));
-                metade = 3;
-                break;
-
-            case 6:
-                Tamanhotime.addAll(List.of(2,3,4,3,4));
-                metade = 4;
-                break;
-
-            case 7:
-                Tamanhotime.addAll(List.of(2,3,4,3,4));
-                metade = 4;
-                break;
-
-            case 8:
-                Tamanhotime.addAll(List.of(3,4,4,5,5));
-                metade = 5;
-                break;
-
-            case 9:
-                Tamanhotime.addAll(List.of(3,4,4,5,5));
-                metade = 5;
-                break;
-
-            case 10:
-                Tamanhotime.addAll(List.of(3,4,4,5,5));
-                metade = 6;
-                break;
-
-        }
-    }
 
 }
 

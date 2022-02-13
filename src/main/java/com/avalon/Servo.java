@@ -8,7 +8,8 @@ public class Servo implements Personagens {
 
     @Override
     public void conhecimento(ArrayList<Jogador> Participantes) {
-        System.out.println("Infelizmente você não sabe nada.");
+        System.out.println("Você é um servo");
+        System.out.println("e infelizmente você não sabe nada.");
     }
 
 
