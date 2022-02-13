@@ -1,6 +1,7 @@
 package com.avalon;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Jogador {
@@ -54,6 +55,30 @@ public class Jogador {
 
     public boolean Votar(){
         return Classe.escolherInfluencia();
+    }
+
+    public boolean aprovarVoto(){
+        Scanner scanner4 = new Scanner(System.in);
+        while (true){
+            int input = 0;
+            System.out.println("Digite 1 aprovar e 2 para rejeitar a votação.");
+
+            try {
+                input = scanner4.nextInt();
+            }
+            catch (Exception e){
+
+            }
+            if (input == 1){
+                return true;
+            }
+            else if (input == 2){
+                return false;
+            }
+            else{ System.out.println("Comando Invalido");}
+
+            scanner4.nextLine();
+        }
     }
 
 

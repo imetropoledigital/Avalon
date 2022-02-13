@@ -36,6 +36,8 @@ public class Assassino implements Personagens {
                 return false;
             }
             else{ System.out.println("Comando Invalido");}
+
+            scanner4.nextLine();
         }
     }
 

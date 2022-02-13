@@ -7,10 +7,8 @@ public class Avalon {
     private static int Jogadores;
     private int VitoriasBem = 0;
     private int VitoriasMal = 0;
-    private int indiceLider = 0;
-    private Jogador Lider;
-    private boolean Resultado;
     private int indiceMissao = 0;
+    private static int metade;
     public static ArrayList<Integer> Tamanhotime = new ArrayList<>();
     public static ArrayList<Jogador> Participantes = new ArrayList<>();
     public static ArrayList<Jogador> Escolhidos = new ArrayList<>();
@@ -51,39 +49,47 @@ public class Avalon {
     }
 
     public void Jogar(){
+        boolean Resultado;
+        int indiceLider = 0;
+        Jogador Lider;
         while (true){
             Resultado = true;
             Lider = Participantes.get(indiceLider);
             escolhaTime();
-            for(int i = 0; i < Escolhidos.size(); i++){
-                if(Escolhidos.get(i).Votar() == false){
-                    Resultado = false;
+            if(aprovarVotacao()){
+                for(int i = 0; i < Escolhidos.size(); i++){
+                    if(!Escolhidos.get(i).Votar()){
+                        Resultado = false;
+                    }
                 }
+
+                if(Resultado){
+                    VitoriasBem++;
+                    System.out.println("O bem venceu essa rodada!");
+                }
+                else{
+                    VitoriasMal++;
+                    System.out.println("O mal venceu essa rodada!");
+                }
+
+                indiceMissao++;
             }
 
             Escolhidos.clear();
 
-            if(Resultado == true){
-                VitoriasBem++;
-                System.out.println("O bem venceu essa rodada!");
-            }
-            else{
-                VitoriasMal++;
-                System.out.println("O mal venceu essa rodada!");
-            }
 
             if(VitoriasBem == 3){
-                System.out.println("O conseguiu 3 sucessos, mas ainda não acabou...");
+                System.out.println("O bem conseguiu 3 sucessos, mas ainda não acabou...");
                 break;
             }
 
             if(VitoriasMal == 3){
+                System.out.println("O mal conseguiu 3 fracassos!");
                 System.out.println("O mal ganhou!");
                 break;
             }
 
             indiceLider++;
-            indiceMissao++;
         }
     }
 
@@ -120,8 +126,22 @@ public class Avalon {
         }
     }
 
+    public boolean aprovarVotacao(){
+        int verificar = 0;
+        for(int i = 0; i < Participantes.size(); i++){
+                if(Participantes.get(i).aprovarVoto()){
+                verificar++;
+            }
+        }
+
+        if(verificar >= metade){
+            return true;
+        }
+        return false;
+    }
+
     public Avalon(int Jogadores){
-        this.Jogadores = Jogadores;
+        Avalon.Jogadores = Jogadores;
         Integer[] role = new Integer[Jogadores];
 
         for (int i = 0; i < role.length; i++){
@@ -136,26 +156,32 @@ public class Avalon {
 
             case 5:
                 Tamanhotime.addAll(List.of(2,3,2,3,3));
+                metade = 3;
                 break;
 
             case 6:
                 Tamanhotime.addAll(List.of(2,3,4,3,4));
+                metade = 4;
                 break;
 
             case 7:
                 Tamanhotime.addAll(List.of(2,3,4,3,4));
+                metade = 4;
                 break;
 
             case 8:
                 Tamanhotime.addAll(List.of(3,4,4,5,5));
+                metade = 5;
                 break;
 
             case 9:
                 Tamanhotime.addAll(List.of(3,4,4,5,5));
+                metade = 5;
                 break;
 
             case 10:
                 Tamanhotime.addAll(List.of(3,4,4,5,5));
+                metade = 6;
                 break;
 
         }

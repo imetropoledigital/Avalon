@@ -22,6 +22,7 @@ public class Main {
                 Avalon avalon = new Avalon(Avalon.Configurar());
                 avalon.Preparacao();
                 avalon.Jogar();
+                break;
             }
 
             else if (input == 2){

@@ -34,6 +34,8 @@ public class Oberon implements Personagens {
                 return false;
             }
             else{ System.out.println("Comando Invalido");}
+
+            scanner4.nextLine();
         }
 
 
