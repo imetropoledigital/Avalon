@@ -104,10 +104,13 @@ public class Avalon {
         Jogador Lider;
         while (true){
             Resultado = true;
-            //Lider = Participantes.get(indiceLider);
+            Lider = Participantes.get(indiceLider);
+            System.out.println("O lider " + Lider.getnome() + " de id " + Lider.getId() + " ira escolher o time.");
             escolhaTime();
             if(aprovarVotacao()){
                 for(int i = 0; i < Escolhidos.size(); i++){
+                    int auxiliar = Escolhidos.get(i).getId();
+                    System.out.println("Jogador de id " + auxiliar + " ira escolher sua influecia.");
                     if(!Escolhidos.get(i).Votar()){
                         Resultado = false;
                     }
@@ -140,6 +143,9 @@ public class Avalon {
             }
 
             indiceLider++;
+            if(indiceLider == Participantes.size()){
+                indiceLider = 0;
+            }
         }
     }
 
@@ -178,7 +184,8 @@ public class Avalon {
     public boolean aprovarVotacao(){
         int verificar = 0;
         for(int i = 0; i < Participantes.size(); i++){
-                if(Participantes.get(i).aprovarVoto()){
+            System.out.println("Jogador de ID " + i + " ira julgar a votação.");
+            if(Participantes.get(i).aprovarVoto()){
                 verificar++;
             }
         }
