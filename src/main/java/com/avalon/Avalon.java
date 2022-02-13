@@ -150,6 +150,7 @@ public class Avalon {
         Collections.shuffle(Arrays.asList(role));
         for(int j = 0; j < role.length; j++){
             Participantes.add(new Jogador(j, role[j]));
+            Participantes.get(j).escolherNome();
         }
 
         switch (Jogadores){

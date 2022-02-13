@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class Jogador {
 
-    //private String name;
+    private String nome;
     private int id;
     private Personagens Classe;
     private Classes Carta;
@@ -82,9 +82,32 @@ public class Jogador {
     }
 
 
-    //public void setname(String b){ name = b;}
+    public void escolherNome(){
+        Scanner scanner6 = new Scanner(System.in);
+        while (true){
+            String input = "Padrão";
+            System.out.println("Escolha seu nome:");
 
-    //public String getname(){ return name;}
+            try {
+                input = scanner6.next();
+            }
+            catch (Exception e){
+
+            }
+
+            if (input.length() < 10 && input.length() > 2 && !input.equals("Padrão")){
+               nome = input;
+               System.out.println("Nome aprovado.");
+               return;
+            }
+
+            else{ System.out.println("Nome invalido.");}
+
+            scanner6.nextLine();
+        }
+    }
+
+    public String getnome(){ return nome;}
 
 
 }
