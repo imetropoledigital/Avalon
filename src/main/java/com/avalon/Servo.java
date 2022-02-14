@@ -6,6 +6,10 @@ import java.util.ArrayList;
 
 public class Servo implements Personagens {
 
+    /* @see conhecimento: Metodo que imprime as habilidades do personagem que a implementa
+       @param Participantes do tipo ArrayList<Jogadores>
+       @return não tem return
+     */
     @Override
     public void conhecimento(ArrayList<Jogador> Participantes) {
         System.out.println("Você é um servo");
