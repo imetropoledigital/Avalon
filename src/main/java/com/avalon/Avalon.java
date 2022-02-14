@@ -134,6 +134,11 @@ public class Avalon {
 
             if(VitoriasBem == 3){
                 System.out.println("O bem conseguiu 3 sucessos, mas ainda não acabou...");
+                if (Assasinar(escolherAlvo())){
+                    System.out.println("O Assasino matou o Merlin, o mal venceu!");
+                    break;
+                }
+                System.out.println("O Merlin vive, o bem ganhou!");
                 break;
             }
 
@@ -197,6 +202,33 @@ public class Avalon {
         return false;
     }
 
+    public int escolherAlvo(){
+        Scanner scanner4 = new Scanner(System.in);
+        while (true){
+            int input = -1;
+            System.out.println("Digite o indice do jogador sera assasinado: ");
+
+            try {
+                input = scanner4.nextInt();
+            }
+            catch (Exception e){
+
+            }
+            if(input >= 0 && input < Participantes.size()){
+                return input;
+            }
+            else{ System.out.println("Comando Invalido");}
+
+            scanner4.nextLine();
+        }
+    }
+
+    public boolean Assasinar(int indice){
+        if(Avalon.Participantes.get(indice).getClasse() == Classes.MERLIM){
+            return true;
+        }
+        return false;
+    }
 
 }
 
