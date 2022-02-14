@@ -2,6 +2,7 @@ package com.avalon;
 
 import java.util.*;
 
+/* @see Avalon: A classe Avalon comporta atributos e métodos fundamentais  */
 public class Avalon {
 
     private static int Jogadores;

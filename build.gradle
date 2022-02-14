@@ -13,3 +13,7 @@ mainClassName = 'com.avalon.Main'
 repositories {
      mavenCentral()
 }
+
+run {
+     standardInput = System.in
+}
