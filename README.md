@@ -1,23 +1,33 @@
 # imd0040-tfinal
 
-Repositório modelo para criação do Projeto Final da disciplina de Linguagem de Programação II do Instituto Metrópole Digital da UFRN ministrada pelo Prof. Gustavo Leitão.
-
-As instruções detalhadas para o trabalho podem ser encontradas [neste link](https://happy-wool-a9a.notion.site/Trabalho-III-Unidade-a839a62426ea4c5a9d03df8144703aab).
-
-O grupo deve por neste README, pelo menos, as seguintes informações:
-
 ## Link para vídeo de apresentação
-
-> Tempo máximo de 5 minutos
+``` 
+https://youtu.be/6GWSIrn5HGs
+```
+ 
 
 ## Descrição do trabalho
 
-> Descreva aqui a ideia do trabalho e que problema resolve
+ O nosso trabalho é o desenvolvimento de um jogo com interatividade pelo terminal, utilizamos o jogo The Resistence: 
+ Avalon , o qual é um boardgame como inspiração/modelo, feito na linguagem java, nós utilizamos de diferentes classes
+ para compor o projeto como também interfaces visando cumprir com os requisitos dados para o trabalho
+ assim como para melhorar a comunicação entre as classes e objetos. Utilizamos do Gradle para estruturação do projeto 
+ e assim como orientado fizemos a organização do projeto em pacotes , no caso o package "com.avalon". Não fizemos uso
+ de Generics no código.
 
 ## Diagrama de classes
-
-> Coloque aqui imagem com breve descrição da organização das classes do projeto
+> ![img.png](img.png)
+> 
+> Diagrama Geral
+> ![img_1.png](img_1.png)
 
 ## Instruções para build e execução
 
-> Adicione instruções de como compilar e executar o sistema
+Para compilar o projeto basta digitar:
+``` 
+./gradlew build
+```
+e para executar: 
+```
+./gradlew run
+```
